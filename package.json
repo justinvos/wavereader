@@ -1,0 +1,23 @@
+{
+  "name": "podcast-feed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinvos/podcast-feed.git"
+  },
+  "author": "Justin Vos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justinvos/podcast-feed/issues"
+  },
+  "homepage": "https://github.com/justinvos/podcast-feed#readme",
+  "dependencies": {
+    "http-request": "^0.7.0",
+    "xml2js": "^0.4.17"
+  }
+}
