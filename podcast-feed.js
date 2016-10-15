@@ -1,4 +1,4 @@
-var http = require("http-request");
+var download = require("download");
 var timeConversion = require("./time-conversion.js");
 var xml2js = require("xml2js");
 
@@ -14,7 +14,6 @@ function parseDate(data) {
   } else {
     return parseEpisodeDate(data.rss.channel[0].item[0]);
   }
-  console.log(data.rss.channel[0]);
 }
 
 function parseDescription(data) {
@@ -90,13 +89,8 @@ parseBody = function(url, body, callback) {
 };
 
 parse = function(url, callback) {
-  http.get(url, function(err, res) {
-    if(err) {
-      console.log(err);
-      callback();
-    } else {
-      parseBody(url, res.buffer.toString(), callback);
-    }
+  download(url).then(function(data) {
+    parseBody(url, data, callback);
   });
 };
 
