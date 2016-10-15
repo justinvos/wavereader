@@ -13,22 +13,35 @@ function parseImage(data) {
   return data.rss.channel[0]["itunes:image"][0]["$"]["href"];
 }
 
+function parseEpisodeTitle(item) {
+  return item.title;
+}
+
+function parseEpisodeDescription(item) {
+  return item.description;
+}
+
+function parseEpisodeImage(item) {
+  if(item["itunes:image"] != undefined) {
+    return item["itunes:image"][0]["$"]["href"];
+  } else if(item["media:content"] != undefined && item["media:content"][0]["$"]["type"].startsWith("image")) {
+    return item["media:content"][0]["$"]["url"];
+  }
+}
+
+function parseEpisodeAudio(item) {
+  if(item["enclosure"] != undefined && item["enclosure"][0]["$"]["type"].startsWith("audio")) {
+    return item["enclosure"][0]["$"]["url"];
+  }
+}
+
 function parseEpisode(item, index, podcast) {
   var episode = new Episode(podcast, index);
 
-  episode.title = item.title;
-  episode.description = item.description;
-
-  if(item["itunes:image"] != undefined) {
-    episode.image = item["itunes:image"][0]["$"]["href"];
-  } else if(item["media:content"] != undefined && item["media:content"][0]["$"]["type"].startsWith("image")) {
-    episode.image = item["media:content"][0]["$"]["url"];
-  }
-
-
-  if(item["enclosure"] != undefined && item["enclosure"][0]["$"]["type"].startsWith("audio")) {
-    episode.audio = item["enclosure"][0]["$"]["url"];
-  }
+  episode.title = parseEpisodeTitle(item);
+  episode.description = parseEpisodeDescription(item);
+  episode.image = parseEpisodeImage(item);
+  episode.audio = parseEpisodeAudio(item);
 
   podcast.episodes.push(episode);
 }
@@ -41,11 +54,6 @@ function parseEpisodes(data, podcast) {
     parseEpisode(items[index], index, podcast);
   }
 }
-
-
-download = function(url, callback) {
-
-};
 
 parseBody = function(url, body, callback) {
   xml2js.parseString(body, function(err, res) {
@@ -92,5 +100,5 @@ var Podcast = function(url) {
 }
 
 
-exports.download = download;
 exports.parse = parse;
+exports.parseBody = parseBody;

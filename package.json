@@ -1,8 +1,8 @@
 {
   "name": "podcast-feed",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "podcast-feed is a really simple and straightforward podcast feed reader.",
+  "main": "podcast-feed.js",
   "scripts": {
     "test": "node test.js"
   },
