@@ -3,7 +3,8 @@ var podcastFeed = require("./podcast-feed.js");
 function test(url) {
   podcastFeed.parse(url, function(podcast) {
     console.log("Title : " + podcast.title);
-    console.log("URL   : " + podcast.url)
+    console.log("URL   : " + podcast.url);
+    console.log("Date  : " + podcast.date);
     console.log("Desc. : " + podcast.description);
     console.log("Image : " + podcast.image);
     console.log("# Ep. : " + podcast.episodes.length)

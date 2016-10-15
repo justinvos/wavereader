@@ -1,8 +1,20 @@
-var http = require('http-request');
-var xml2js = require('xml2js');
+var http = require("http-request");
+var timeConversion = require("./time-conversion.js");
+var xml2js = require("xml2js");
 
 function parseTitle(data) {
   return data.rss.channel[0].title[0];
+}
+
+function parseDate(data) {
+  if(data.rss.channel[0].pubDate != undefined) {
+    return timeConversion.convertToStandardTime(data.rss.channel[0].pubDate[0]);
+  } else if(data.rss.channel[0].lastBuildDate != undefined) {
+    return timeConversion.convertToStandardTime(data.rss.channel[0].lastBuildDate[0]);
+  } else {
+    return parseEpisodeDate(data.rss.channel[0].item[0]);
+  }
+  console.log(data.rss.channel[0]);
 }
 
 function parseDescription(data) {
@@ -15,6 +27,10 @@ function parseImage(data) {
 
 function parseEpisodeTitle(item) {
   return item.title;
+}
+
+function parseEpisodeDate(item) {
+  return timeConversion.convertToStandardTime(item.pubDate[0]);
 }
 
 function parseEpisodeDescription(item) {
@@ -39,6 +55,7 @@ function parseEpisode(item, index, podcast) {
   var episode = new Episode(podcast, index);
 
   episode.title = parseEpisodeTitle(item);
+  episode.date = parseEpisodeDate(item);
   episode.description = parseEpisodeDescription(item);
   episode.image = parseEpisodeImage(item);
   episode.audio = parseEpisodeAudio(item);
@@ -62,6 +79,7 @@ parseBody = function(url, body, callback) {
     } else {
       podcast = new Podcast(url);
       podcast.title = parseTitle(res);
+      podcast.date = parseDate(res);
       podcast.description = parseDescription(res);
       podcast.image = parseImage(res);
       parseEpisodes(res, podcast);
