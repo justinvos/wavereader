@@ -18,6 +18,8 @@ The podcast object contains 5 members; **url**, **title**, **description**, **im
 
 `podcast.title` is the name of the podcast (*string*).
 
+`podcast.date` is the date of this version of the feed being published, formatted in the form of ISO 8601 (*string*).
+
 `podcast.description` is the channel's description of the podcast (*string*).
 
 `podcast.image` is the URL of the podcast's image, which will also be used as the default for any missing episode images (*string*).
@@ -31,6 +33,8 @@ The episode object contains 5 members: **index**, **title**, **description**, **
 `episode.index` - is the order it appeared in the podcast's RSS feed (*integer*).
 
 `episode.title` is the name of the episode (*string*).
+
+`episode.date` is the release date of this episode, formatted in the form of ISO 8601 (*string*).
 
 `episode.description` is the episode's description/notes (*string*).
 
