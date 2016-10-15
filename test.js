@@ -7,7 +7,7 @@ function test(url) {
     console.log("Date  : " + podcast.date);
     console.log("Desc. : " + podcast.description);
     console.log("Image : " + podcast.image);
-    console.log("# Ep. : " + podcast.episodes.length)
+    console.log("# Ep. : " + podcast.episodes.length);
     console.log();
   });
 }

@@ -42,6 +42,7 @@ function parseEpisodeImage(item) {
   } else if(item["media:content"] != undefined && item["media:content"][0]["$"]["type"].startsWith("image")) {
     return item["media:content"][0]["$"]["url"];
   }
+  return "";
 }
 
 function parseEpisodeAudio(item) {
@@ -56,7 +57,10 @@ function parseEpisode(item, index, podcast) {
   episode.title = parseEpisodeTitle(item);
   episode.date = parseEpisodeDate(item);
   episode.description = parseEpisodeDescription(item);
-  episode.image = parseEpisodeImage(item);
+  var episodeImage = parseEpisodeImage(item);
+  if(episodeImage != "") {
+    episode.image = episodeImage;
+  }
   episode.audio = parseEpisodeAudio(item);
 
   podcast.episodes.push(episode);
