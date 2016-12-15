@@ -1,9 +1,9 @@
 # podcast-feed
 
-**podcast-feed** is a really simple and straightforward podcast feed reader. Just download the `podcast-feed.js` file and place it anywhere within your Node project. To get started using **podcast-feed.js**, all you need is the following code snippet.
+**podcast-feed** is a really simple and straightforward podcast feed reader. Just install using the `npm install podcast-feed` command and require it within your Node project. To get started using **podcast-feed**, all you need is the following code snippet.
 
 ```
-var podcastFeed = require("path/to/podcast-feed.js");
+var podcastFeed = require("podcast-feed");
 
 podcastFeed.parse(url, function(podcast) {
 	// calls back with a Podcast object
@@ -38,7 +38,7 @@ The episode object contains 5 members: **index**, **title**, **description**, **
 
 `episode.description` is the episode's description/notes (*string*).
 
-`episode.image` is the URL of the episode's image, if any episode is missing an image, the podcast's image will be used a a default (*string*).
+`episode.image` is the URL of the episode's image, if any episode is missing an image, the podcast's image will be used as a default (*string*).
 
 `episode.image` is the URL of the episode's audio file (*string*).
 
