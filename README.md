@@ -40,7 +40,7 @@ The episode object contains 5 members: **index**, **title**, **description**, **
 
 `episode.image` is the URL of the episode's image, if any episode is missing an image, the podcast's image will be used as a default (*string*).
 
-`episode.image` is the URL of the episode's audio file (*string*).
+`episode.audio` is the URL of the episode's audio file (*string*).
 
 ## Issues or bugs
 
