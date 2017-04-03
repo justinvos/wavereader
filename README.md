@@ -12,7 +12,7 @@ podcastFeed.parse(url, function(podcast) {
 ```
 
 ### Podcast object
-The podcast object contains 5 members; **url**, **title**, **description**, **image** and **episodes**.
+The podcast object contains six members; **url**, **title**, **date**, **description**, **image** and **episodes**.
 
 `podcast.url` is the URL of the podcast feed (*string*). This is the URL given to the parse function.
 
@@ -24,11 +24,11 @@ The podcast object contains 5 members; **url**, **title**, **description**, **im
 
 `podcast.image` is the URL of the podcast's image, which will also be used as the default for any missing episode images (*string*).
 
-`episodes` is a list of Episode objects contained in this podcast (*list*).
+`podcast.episodes` is a list of Episode objects contained in this podcast (*list*).
 
 
 ### Episode object
-The episode object contains 5 members: **index**, **title**, **description**, **image** and **audio**.
+The episode object contains six members: **index**, **title**, **date**, **description**, **image** and **audio**.
 
 `episode.index` - is the order it appeared in the podcast's RSS feed (*integer*).
 
@@ -40,7 +40,7 @@ The episode object contains 5 members: **index**, **title**, **description**, **
 
 `episode.image` is the URL of the episode's image, if any episode is missing an image, the podcast's image will be used as a default (*string*).
 
-`episode.audio` is the URL of the episode's audio file (*string*).
+`episode.image` is the URL of the episode's audio file (*string*).
 
 ## Issues or bugs
 
