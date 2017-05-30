@@ -5,9 +5,15 @@ var xml2js = require("xml2js")
 // CLASSES
 
 /**
- * A Podcast object. Contains 5 members: url, title, description, image and episodes.
+ * A Podcast object. Contains 6 members: url, title, description, image and episodes.
  * @param {string} url
  * @param {number} height
+ * @property {string} url the URL of the podcast feed, this is the URL given to the parse function
+ * @property {string} title the name of the podcast
+ * @property {string} date the date of this version of the feed being published, formatted in the form of ISO 8601
+ * @property {string} description the channel's description of the podcast
+ * @property {string} image he URL of the podcast's image, which will also be used as the default for any missing episode images
+ * @property {Array} episodes a list of Episode objects contained in this podcast
  */
 class Podcast {
   constructor(url) {
@@ -20,9 +26,15 @@ class Podcast {
 }
 
 /**
- * An Episode object. Contains 5 members: index, title, description, image and audio.
+ * An Episode object. Contains 6 members: index, title, description, image and audio.
  * @param {Podcast} podcast
  * @param {number} index
+ * @property {number} index the order it appeared in the podcast's RSS feed
+ * @property {string} title the name of the episode
+ * @property {string} date the release date of this episode, formatted in the form of ISO 8601
+ * @property {string} description the episode's description/notes
+ * @property {string} image the URL of the episode's image, if any episode is missing an image, the podcast's image will be used as a default
+ * @property {string} audio the URL of the episode's audio file
  */
 class Episode {
   constructor(podcast, index) {

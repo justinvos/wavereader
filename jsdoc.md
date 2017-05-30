@@ -2,21 +2,39 @@
 
 ## Podcast
 
-A Podcast object. Contains 5 members: url, title, description, image and episodes.
+A Podcast object. Contains 6 members: url, title, description, image and episodes.
 
 **Parameters**
 
 -   `url` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `height` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
+**Properties**
+
+-   `url` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the URL of the podcast feed, this is the URL given to the parse function
+-   `title` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the name of the podcast
+-   `date` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the date of this version of the feed being published, formatted in the form of ISO 8601
+-   `description` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the channel's description of the podcast
+-   `image` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** he URL of the podcast's image, which will also be used as the default for any missing episode images
+-   `episodes` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** a list of Episode objects contained in this podcast
+
 ## Episode
 
-An Episode object. Contains 5 members: index, title, description, image and audio.
+An Episode object. Contains 6 members: index, title, description, image and audio.
 
 **Parameters**
 
 -   `podcast` **[Podcast](#podcast)** 
 -   `index` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+
+**Properties**
+
+-   `index` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the order it appeared in the podcast's RSS feed
+-   `title` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the name of the episode
+-   `date` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the release date of this episode, formatted in the form of ISO 8601
+-   `description` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the episode's description/notes
+-   `image` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the URL of the episode's image, if any episode is missing an image, the podcast's image will be used as a default
+-   `audio` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the URL of the episode's audio file
 
 ## parseBody
 
