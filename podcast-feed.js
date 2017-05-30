@@ -6,13 +6,12 @@ var xml2js = require("xml2js")
 
 /**
  * A Podcast object. Contains 6 members: url, title, description, image and episodes.
- * @param {string} url
- * @param {number} height
+ * @param {string} url the url of the podcast RSS feed you want to parse
  * @property {string} url the URL of the podcast feed, this is the URL given to the parse function
  * @property {string} title the name of the podcast
  * @property {string} date the date of this version of the feed being published, formatted in the form of ISO 8601
  * @property {string} description the channel's description of the podcast
- * @property {string} image he URL of the podcast's image, which will also be used as the default for any missing episode images
+ * @property {string} image the URL of the podcast's image, which will also be used as the default for any missing episode images
  * @property {Array} episodes a list of Episode objects contained in this podcast
  */
 class Podcast {
@@ -27,8 +26,8 @@ class Podcast {
 
 /**
  * An Episode object. Contains 6 members: index, title, description, image and audio.
- * @param {Podcast} podcast
- * @param {number} index
+ * @param {Podcast} podcast the Podcast object that this episode belongs to
+ * @param {number} index the placement in the podcast feed (0 being first, 1 being second, etc.)
  * @property {number} index the order it appeared in the podcast's RSS feed
  * @property {string} title the name of the episode
  * @property {string} date the release date of this episode, formatted in the form of ISO 8601
