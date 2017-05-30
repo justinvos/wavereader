@@ -6,8 +6,7 @@ A Podcast object. Contains 6 members: url, title, description, image and episode
 
 **Parameters**
 
--   `url` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `height` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `url` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the url of the podcast RSS feed you want to parse
 
 **Properties**
 
@@ -15,7 +14,7 @@ A Podcast object. Contains 6 members: url, title, description, image and episode
 -   `title` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the name of the podcast
 -   `date` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the date of this version of the feed being published, formatted in the form of ISO 8601
 -   `description` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the channel's description of the podcast
--   `image` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** he URL of the podcast's image, which will also be used as the default for any missing episode images
+-   `image` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the URL of the podcast's image, which will also be used as the default for any missing episode images
 -   `episodes` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** a list of Episode objects contained in this podcast
 
 ## Episode
@@ -24,8 +23,8 @@ An Episode object. Contains 6 members: index, title, description, image and audi
 
 **Parameters**
 
--   `podcast` **[Podcast](#podcast)** 
--   `index` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `podcast` **[Podcast](#podcast)** the Podcast object that this episode belongs to
+-   `index` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the placement in the podcast feed (0 being first, 1 being second, etc.)
 
 **Properties**
 
