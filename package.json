@@ -1,6 +1,6 @@
 {
   "name": "wavereader",
-  "version": "1.0.6",
+  "version": "1.0.0",
   "description": "wavereader is a really simple and straightforward podcast feed reader.",
   "main": "wavereader.js",
   "scripts": {
