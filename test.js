@@ -1,7 +1,7 @@
-var podcastFeed = require("./podcast-feed.js")
+var wavereader = require("./wavereader.js")
 
 function test(url) {
-  podcastFeed.parse(url, function(podcast) {
+  wavereader.parse(url, function(podcast) {
     console.log("Title : " + podcast.title)
     console.log("URL   : " + podcast.url)
     console.log("Date  : " + podcast.date)

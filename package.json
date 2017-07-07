@@ -1,8 +1,8 @@
 {
-  "name": "podcast-feed",
+  "name": "wavereader",
   "version": "1.0.6",
-  "description": "podcast-feed is a really simple and straightforward podcast feed reader.",
-  "main": "podcast-feed.js",
+  "description": "wavereader is a really simple and straightforward podcast feed reader.",
+  "main": "wavereader.js",
   "scripts": {
     "test": "node test.js"
   },

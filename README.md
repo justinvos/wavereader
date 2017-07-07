@@ -1,11 +1,11 @@
-# podcast-feed
+# wavereader
 
-**podcast-feed** is a really simple and straightforward podcast feed reader. Just install using the `npm install podcast-feed` command and require it within your Node project. To get started using **podcast-feed**, all you need is the following code snippet.
+**wavereader** is a really simple and straightforward podcast feed reader. Just install using the `npm install wavereader` command and require it within your Node project. To get started using **wavereader**, all you need is the following code snippet.
 
 ```
-var podcastFeed = require("podcast-feed")
+var wavereader = require("wavereader")
 
-podcastFeed.parse(url, function(podcast) {
+wavereader.parse(url, function(podcast) {
 	// calls back with a Podcast object
 });
 
