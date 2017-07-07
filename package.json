@@ -1,6 +1,6 @@
 {
   "name": "wavereader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "wavereader is a really simple and straightforward podcast feed reader.",
   "main": "wavereader.js",
   "scripts": {
@@ -8,14 +8,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/justinvos/podcast-feed.git"
+    "url": "git+https://github.com/justinvos/wavereader.git"
   },
   "author": "Justin Vos",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/justinvos/podcast-feed/issues"
+    "url": "https://github.com/justinvos/wavereader/issues"
   },
-  "homepage": "https://github.com/justinvos/podcast-feed#readme",
+  "homepage": "https://github.com/justinvos/wavereader#readme",
+  "keywords": [
+    "podcast",
+    "feed",
+    "rss",
+    "parser",
+    "read"
+  ],
   "dependencies": {
     "download": "^5.0.2",
     "xml2js": "^0.4.17"
